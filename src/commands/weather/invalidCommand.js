@@ -1,0 +1,9 @@
+class InvalidCommand{
+    constructor(){
+        
+    }
+
+    execute(){
+        
+    }
+}

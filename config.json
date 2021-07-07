@@ -1,0 +1,12 @@
+{
+	"prefix" : "$",
+	"weather" : {
+		"time" : {
+			"hour" : 17 ,
+			"minute" : 2
+		},
+		"location" : "Montreal",
+		"unit" : "metric",
+		"lang" : "en"
+	}
+}

@@ -1,0 +1,11 @@
+class getWeatherCommand{   
+
+    constructor(){
+        
+    }
+
+    execute(){
+        
+    }
+    
+}
