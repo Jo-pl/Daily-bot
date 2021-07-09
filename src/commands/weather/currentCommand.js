@@ -8,7 +8,6 @@ class Current {
         let data = weather.fetchWeatherApi("weather")
             .then((body) => {
                 message.channel.send(weather.embededCurrent(body));
-                
             })
             .catch((err)=>{console.log(err)});
     }

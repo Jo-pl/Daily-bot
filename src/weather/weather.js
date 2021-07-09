@@ -8,6 +8,7 @@ const {
 const dotenv = require("dotenv");
 dotenv.config();
 const config = require('../../config.json');
+const {Connection} = require('../bot/Connection');
 
 class Weather {
 	unitset = {
@@ -42,6 +43,7 @@ class Weather {
 	 * @author SaschaAlex
 	 */
 	async fetchWeatherApi(command) {
+		let connection = new Connection();
 		const url = new URL(`https://api.openweathermap.org/data/2.5/${command}`);
 		url.searchParams.append("q", this.location);
 		url.searchParams.append("units", this.unit);
