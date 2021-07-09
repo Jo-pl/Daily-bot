@@ -1,13 +1,14 @@
 const {HelpCommand} = require('./helpCommand');
+const {Current} = require('./currentCommand');
 
 class WeatherCommand{
-	constructor(subcommand , ...args){
-		switch(subcommand){
+	constructor([message, [command, ...args]]){
+		switch(command){
 			case "help":
 				this.help();
 				break;
 			case "current":
-				this.getWeather();
+				this.getWeather([message, args]);
 				break;
 			default:
 				this.invalidCommand();
@@ -15,17 +16,17 @@ class WeatherCommand{
 	}
     
 	execute(){
-			
+		
 	}
 
 	help(){
-		console.log(HelpCommand.execute());
+		HelpCommand.execute();
 	}
-	getWeather(){
-
+	getWeather([message]){
+		Current.execute(message);
 	}
 	invalidCommand(){
-        
+    
 	}
 
 }

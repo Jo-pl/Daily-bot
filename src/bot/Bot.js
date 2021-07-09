@@ -1,30 +1,45 @@
 const schedule = require("node-schedule");
+const {CommandListener} = require('./CommandListener');
 
+
+/**
+ * @description This class 
+ * is responsible for the handling of all requests
+ * from the users.
+ */
 class Bot {
+    /**
+     * @author Misterjo, SaschaAlex
+     * @param {Object} parameters  
+     */
     constructor(parameters) {
         this.client = parameters.client
-				this.config = parameters.config
+		this.config = parameters.config
         this.listenClient();
-        //console.log(this.client);
     }
+    /**
+     * @listener
+     * @author Misterjo, SaschaAlex 
+     */
     listenClient() {
         console.log("testing");
         const channel = this.client.channels.cache.get('855918559992348723');
         this.client.once('ready', () => {
             console.log('Ready!');
-            schedule.scheduleJob(`${this.config.weather.time.minute} ${this.config.weather.time.hour} *  *  *`, () => {});
         });
         //Message listener
         this.client.on('message', message => {
-            if (message.content.startsWith(this.config.prefix)) {
-                console.log(message.author.avatarURL({
-                    format: 'jpeg',
-                    dynamic: true,
-                    size: 2048
-                }));
+            let [prefix,...command] = message.content;
+            if (prefix == this.config.prefix) {
+                let paramTuple  = [
+                    message,
+                    command.join('').split(" ")
+                ]
+                let commandListener = new CommandListener(paramTuple);
             }
         })
     }
+
 }
 module.exports = {
     Bot: Bot

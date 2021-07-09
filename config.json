@@ -2,8 +2,8 @@
 	"prefix" : "$",
 	"weather" : {
 		"time" : {
-			"hour" : 17 ,
-			"minute" : 2
+			"hour" : 18 ,
+			"minute" : 5
 		},
 		"location" : "Montreal",
 		"unit" : "metric",
