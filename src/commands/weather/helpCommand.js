@@ -1,5 +1,5 @@
 class HelpCommand {
-    
+
     static execute() {
         return {
             embed: {
@@ -11,4 +11,6 @@ class HelpCommand {
     }
 }
 
-module.exports = {HelpCommand : HelpCommand};
+module.exports = {
+    HelpCommand: HelpCommand
+};

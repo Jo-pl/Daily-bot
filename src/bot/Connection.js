@@ -1,8 +1,10 @@
-class Connection{
-    constructor(connectionString){
+class Connection {
+    constructor(connectionString) {
         this.connectionString = connectionString;
     }
 }
 
 
-module.exports = {Connection : Connection};
+module.exports = {
+    Connection: Connection
+};

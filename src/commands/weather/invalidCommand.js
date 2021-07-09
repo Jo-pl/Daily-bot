@@ -1,9 +1,9 @@
-class InvalidCommand{
-    constructor(){
-        
+class InvalidCommand {
+    constructor() {
+
     }
 
-    execute(){
-        
+    execute() {
+
     }
 }

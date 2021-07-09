@@ -1,5 +1,7 @@
 const schedule = require("node-schedule");
-const {CommandListener} = require('./CommandListener');
+const {
+    CommandListener
+} = require('./CommandListener');
 
 
 /**
@@ -14,7 +16,7 @@ class Bot {
      */
     constructor(parameters) {
         this.client = parameters.client
-		this.config = parameters.config
+        this.config = parameters.config
         this.listenClient();
     }
     /**
@@ -29,9 +31,9 @@ class Bot {
         });
         //Message listener
         this.client.on('message', message => {
-            let [prefix,...command] = message.content;
+            let [prefix, ...command] = message.content;
             if (prefix == this.config.prefix) {
-                let paramTuple  = [
+                let paramTuple = [
                     message,
                     command.join('').split(" ")
                 ]

@@ -1,3 +1,5 @@
-const {WeatherCommand} = require('./weather/WeatherCommand');
+const {
+    WeatherCommand
+} = require('./weather/WeatherCommand');
 
 new WeatherCommand("help");

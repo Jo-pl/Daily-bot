@@ -1,9 +1,13 @@
-const {HelpCommand} = require('./helpCommand');
-const {Current} = require('./currentCommand');
+const {
+	HelpCommand
+} = require('./helpCommand');
+const {
+	Current
+} = require('./currentCommand');
 
-class WeatherCommand{
-	constructor([message, [command, ...args]]){
-		switch(command){
+class WeatherCommand {
+	constructor([message, [command, ...args]]) {
+		switch (command) {
 			case "help":
 				this.help();
 				break;
@@ -12,23 +16,25 @@ class WeatherCommand{
 				break;
 			default:
 				this.invalidCommand();
-		}                                                                   
-	}
-    
-	execute(){
-		
+		}
 	}
 
-	help(){
+	execute() {
+
+	}
+
+	help() {
 		HelpCommand.execute();
 	}
-	getWeather([message]){
+	getWeather([message]) {
 		Current.execute(message);
 	}
-	invalidCommand(){
-    
+	invalidCommand() {
+
 	}
 
 }
 
-module.exports = {WeatherCommand :WeatherCommand};
+module.exports = {
+	WeatherCommand: WeatherCommand
+};
