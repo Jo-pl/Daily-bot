@@ -1,11 +1,13 @@
-const {WeatherCommand} = require('../commands/weather/weatherCommand')
+const {
+    WeatherCommand
+} = require('../commands/weather/weatherCommand')
 
 class CommandListener {
     constructor([message, [command, ...args]]) {
 
-        switch(command){
+        switch (command) {
             case "weather":
-                let weatherCommand = new WeatherCommand([message,args]);
+                let weatherCommand = new WeatherCommand([message, args]);
                 break;
             case "reddit":
                 break;

@@ -1,6 +1,10 @@
-const {URL} = require("url");
+const {
+	URL
+} = require("url");
 const fetch = require("node-fetch");
-const {MessageEmbed} = require('discord.js');
+const {
+	MessageEmbed
+} = require('discord.js');
 const dotenv = require("dotenv");
 dotenv.config();
 const config = require('../../config.json');
@@ -24,7 +28,7 @@ class Weather {
 			speed: "mile/hour"
 		}
 	}
-	
+
 	constructor(message) {
 		this.unit = config.weather.unit;
 		this.unitShow = this.unitset[this.unit]
@@ -35,7 +39,7 @@ class Weather {
 	}
 
 	/**
-   * @author SaschaAlex
+	 * @author SaschaAlex
 	 */
 	async fetchWeatherApi(command) {
 		const url = new URL(`https://api.openweathermap.org/data/2.5/${command}`);
@@ -90,5 +94,5 @@ class Weather {
 }
 
 module.exports = {
-    Weather: Weather
+	Weather: Weather
 };
