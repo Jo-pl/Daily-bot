@@ -9,7 +9,7 @@ class WeatherCommand {
 	constructor([message, [command, ...args]]) {
 		switch (command) {
 			case "help":
-				this.help();
+				this.help([message,args]);
 				break;
 			case "current":
 				this.getWeather([message, args]);
@@ -23,9 +23,10 @@ class WeatherCommand {
 
 	}
 
-	help() {
-		HelpCommand.execute();
+	help([message]) {
+		HelpCommand.execute(message);
 	}
+
 	getWeather([message]) {
 		Current.execute(message);
 	}
