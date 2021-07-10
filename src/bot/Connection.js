@@ -17,7 +17,7 @@ class Connection {
     }
 
     getConfig(){
-
+        
     }
 
     runOnce(){
