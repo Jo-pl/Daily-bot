@@ -6,7 +6,7 @@
 docker-compose -f docker.compose.yml 
 ```
 ## Run the dev Environement
-You will need [Docker](https://www.docker.com/get-started) and [docker-compose](https://docs.docker.com/compose/install/) install on your machine.This is will install for you the tested version of node we use for this project , all the dependancies and also a mongoDB database.
+You will need [Docker](https://www.docker.com/get-started) and [docker-compose](https://docs.docker.com/compose/install/) installed on your machine. This will enable you to install the node version needed to run this project, all the dependancies and also a mongoDB database.
 
 Execute the following commands in repo root.
 ```bash
@@ -29,7 +29,7 @@ mongodb://localhost:27017/
 ```
 
 ## Environement variables
-Environement variables can be pass 
+Environement variables can be passed 
 to the containers by creating a .env
 in the project root. For more information 
 please check the [Docker documentation](https://docs.docker.com/compose/environment-variables/).
