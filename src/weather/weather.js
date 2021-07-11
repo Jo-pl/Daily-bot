@@ -1,10 +1,6 @@
-const {
-	URL
-} = require("url");
+const {URL} = require("url");
 const fetch = require("node-fetch");
-const {
-	MessageEmbed
-} = require('discord.js');
+const {MessageEmbed} = require('discord.js');
 const dotenv = require("dotenv");
 dotenv.config();
 const config = require('../../config.json');
@@ -52,8 +48,11 @@ class Weather {
 		return json;
 	}
 
+	/**
+	 * @author SaschaAlex
+	 */
 	embededCurrent(body) {
-		return new MessageEmbed() // TODO replace this for an object
+		return new MessageEmbed()
 			.setColor('#0099ff')
 			.setTitle("Curent weather")
 			.setDescription(`The current weather for ${body.name} is ${body.weather[0].description} and it
