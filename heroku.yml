@@ -8,6 +8,4 @@ release:
 run:
   web: docker-compose.yml
   worker:
-    command:
-      - python myworker.py
     image: mongo:4.4.5
