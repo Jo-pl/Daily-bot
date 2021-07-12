@@ -1,0 +1,13 @@
+build:
+  docker:
+    web: dockerfile
+release:
+  command:
+    - docker-compose.yml
+  image: mongo:4.4.5
+run:
+  web: docker-compose.yml
+  worker:
+    command:
+      - python myworker.py
+    image: mongo:4.4.5
