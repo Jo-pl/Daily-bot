@@ -12,6 +12,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 const config = require('../config.json');
 
+
+
 //Initializing bot
 const {
     Bot
@@ -22,8 +24,6 @@ let discordBot = new Bot({
     client: client,
     config: config
 });
-
-//Start program
 
 //Weather method
 async function fetchWeatherApi() {

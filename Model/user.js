@@ -3,11 +3,8 @@ const {Schema , model} = require('mongoose');
 const UserSchema = new Schema({
 	discordId: Number ,
     userName: String ,
-    avatarUrl: String,
-    subreddits:[{
-        id:Number,
-        name:String,
-    }],
+    avatarURL: String,
+    subreddit_ids: [Number],
 });
 
 const User = model('User', UserSchema);

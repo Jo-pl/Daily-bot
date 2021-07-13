@@ -4,7 +4,6 @@ const {
 
 class CommandListener {
     constructor([message, [command, ...args]]) {
-
         switch (command) {
             case "weather":
                 let weatherCommand = new WeatherCommand([message, args]);

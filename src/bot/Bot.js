@@ -2,7 +2,8 @@ const schedule = require("node-schedule");
 const {
     CommandListener
 } = require('./CommandListener');
-
+const Connection = require('./Connection');
+const model = require('../../Model/index');
 
 /**
  * @description This class 
@@ -17,6 +18,7 @@ class Bot {
     constructor(parameters) {
         this.client = parameters.client
         this.config = parameters.config
+        this.connection = new Connection();
         this.listenClient();
     }
     /**
@@ -32,7 +34,8 @@ class Bot {
         //Message listener
         this.client.on('message', message => {
             let [prefix, ...command] = message.content;
-            if (prefix == this.config.prefix) {
+            if (prefix == this.config.prefix) { 
+                UserCreation(message);
                 let paramTuple = [
                     message,
                     command.join('').split(" ")
@@ -43,6 +46,11 @@ class Bot {
     }
 
 }
+
+function UserCreation(message){
+    
+}
+
 module.exports = {
     Bot: Bot
 };
