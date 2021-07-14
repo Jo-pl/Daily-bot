@@ -1,10 +1,11 @@
 const schedule = require("node-schedule");
-const {
-    CommandListener
-} = require('./CommandListener');
-const Connection = require('./Connection');
+const {CommandListener} = require('./CommandListener');
 
-const Database = require('./Database');
+const Connection = require('../database/Connection');
+
+
+const Database = require('../database/Database');
+const CommandRequest = require('../commands/commandRequest');
 
 /**
  * @description This class 
@@ -36,14 +37,14 @@ class Bot {
         this.client.on('message', message => {
             let [prefix, ...command] = message.content;
             if (prefix == this.config.prefix) {
-                console.log(message.author.id); //DEBUG
-                Database.createUser(message);
-                UserCreation(message);
-                let paramTuple = [
-                    message,
-                    command.join('').split(" ")
-                ]
-                let commandListener = new CommandListener(paramTuple);
+                /** 
+                Database.createUser(message).then((user) => {
+                    console.log(user);
+                });
+                */
+                CommandRequest.requestFromMessage(message);
+
+                //new CommandListener(message);
             }
         })
     }

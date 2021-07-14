@@ -6,13 +6,13 @@ const {
 } = require('./currentCommand');
 
 class WeatherCommand {
-	constructor([message, [command, ...args]]) {
-		switch (command) {
+	constructor(request) {
+		switch (request.command.head) {
 			case "help":
-				this.help([message,args]);
+				this.help(request.next());
 				break;
 			case "current":
-				this.getWeather([message, args]);
+				this.getWeather(request.next());
 				break;
 			default:
 				this.invalidCommand();
@@ -23,12 +23,12 @@ class WeatherCommand {
 
 	}
 
-	help([message]) {
-		HelpCommand.execute(message);
+	help(request) {
+		HelpCommand.execute(request);
 	}
 
-	getWeather([message]) {
-		Current.execute(message);
+	getWeather(request) {
+		Current.execute(request);
 	}
 	invalidCommand() {
 

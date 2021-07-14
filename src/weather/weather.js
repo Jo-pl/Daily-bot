@@ -4,7 +4,7 @@ const {MessageEmbed} = require('discord.js');
 const dotenv = require("dotenv");
 dotenv.config();
 const config = require('../../config.json');
-const {Connection} = require('../bot/Connection');
+const {Connection} = require('../database/Connection');
 
 class Weather {
 	unitset = {

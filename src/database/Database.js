@@ -3,19 +3,29 @@ const model = require('../../Model/index');
 class Database {
 
     static async createUser(message) {
-        let result = await model.User.findOne({
-            discordId: message.author.id
-        });
+        let result =  await model.User.findOne({"discordId": message.author.id}).exec();
         if (!result) {
             let newUser = new model.User({
                 discordId: message.author.id,
-                userName: message.author.username,
+                userName: message.author.username, 
                 avatarURL: message.author.avatarURL(),
-                subreddits: []
             });
-            return newUser.save();
+            await newUser.save().exec();
+            return new Promise((resolve, reject) => {
+                resolve(newUser);
+            });
         }
-        return new Promise();
+        return new Promise((resolve, reject) => {
+            resolve(result);
+        });
+    }
+
+
+    static async fetchUserWeatherConfig(id){
+        let user = await model.User.findOne({
+            discordId : id
+        });
+        return user.weather
     }
 
     static async addSubreddit(link){
@@ -27,7 +37,7 @@ class Database {
                 name: 'defaultName'
             });
         }
-        return new Promise((_,__) => subreddit);
+        return subreddit
     }
 
     static async addSubredditToUser(UserID,link){
@@ -39,7 +49,7 @@ class Database {
     static async findUser(discordID) {
         return model.User.findOne({
             discordId: discordID
-        });
+        }).exec();
     }
 
     static async getUserSubreddits(discordID){

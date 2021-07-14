@@ -2,7 +2,7 @@ const {Weather} = require("../../weather/weather");
 
 class Current {
 
-    static execute(message) {
+    static execute({message : message}) {
         let weather = new Weather(message);
         
         weather.fetchWeatherApi("weather")

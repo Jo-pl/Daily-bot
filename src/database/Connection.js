@@ -6,7 +6,11 @@ const model = require('../../Model/index');
 
 class Connection {
     constructor() {
-        const uri = (`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`);
+        const uri = (
+        "mongodb+srv://"
+        +`${process.env.DB_USER}:${process.env.DB_PASS}@`
+        +`${process.env.DB_HOST}/${process.env.DB_NAME}`
+        );
         mongoose.connect(uri, { useNewUrlParser: true }).
         catch(error => console.log(error));
         
