@@ -1,0 +1,11 @@
+{
+	"Title": "Aide pour la météo",
+	"Description": "Ceci est une commande d'aide pour la météo",
+	"Help": "`$weather help` Ceci est une commande d'aide pour la météo.",
+	"Current": "`$weather current` Cette commande retourne la météo actuelle.",
+	"Day": "`$weather day` Les prévisions météorologiques pour la journée.",
+	"Week": "`$weather week` Les prévisions météorologiques pour la semaine.",
+	"Unit": "`$weather unit {unit}` Commande pour changer les unités.",
+	"Lang": "`$weather unit {lang}` Commande pour changer la langue.",
+	"Loc": "`$weather loc {loc}` Commande pour changer la localisation."
+}

@@ -1,25 +1,20 @@
-class EmbedWeather {
-	unitset = {
-		default: {
-			temperature: "K",
-			pressure: "hPa",
-			speed: "m/s"
+const WeatherEmbedType = require('./weatherEmbedType');
+const HelpEmbed = require('./helpEmbed/helpembed');
 
-		},
-		metric: {
-			temperature: "°C",
-			pressure: "hPa",
-			speed: "m/s"
-		},
-		imperial: {
-			temperature: "°F",
-			pressure: "hPa",
-			speed: "mile/hour"
+class EmbedWeather {
+	static execute(request,embed){
+		switch(request.embedParams.embedType){
+			case WeatherEmbedType.Current:
+				// TODO
+				break;
+			case WeatherEmbedType.Help:
+				HelpEmbed.execute(request,embed);
+				break;
+			default:
+				// TODO
 		}
-	}
-	constructor(channel,){
 
 	}
 }
 
-modules.exports = {EmbedWeather : EmbedWeather};
+module.exports = EmbedWeather;
