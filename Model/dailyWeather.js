@@ -2,7 +2,7 @@ const { Decimal128 } = require('mongodb');
 const {Schema , model} = require('mongoose');
 
 const DailyWeatherSchema = new Schema({
-    id: Number,
+    id: String,
     name: String,
     description: String,
     temperature: Decimal128,

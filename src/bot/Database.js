@@ -2,7 +2,7 @@ const model = require('../../Model/index');
 
 class Database {
 
-    static async createUser() {
+    static async createUser(message) {
         let result = await model.User.findOne({
             discordId: message.author.id
         });

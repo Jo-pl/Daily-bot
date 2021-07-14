@@ -1,7 +1,7 @@
 const {Schema , model} = require('mongoose');
 
 const UserSchema = new Schema({
-	discordId: Number ,
+	discordId: String ,
     userName: String ,
     avatarURL: String,
     subreddit_ids: [Number],

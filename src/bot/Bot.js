@@ -3,7 +3,8 @@ const {
     CommandListener
 } = require('./CommandListener');
 const Connection = require('./Connection');
-const model = require('../../Model/index');
+
+const Database = require('./Database');
 
 /**
  * @description This class 
@@ -34,7 +35,9 @@ class Bot {
         //Message listener
         this.client.on('message', message => {
             let [prefix, ...command] = message.content;
-            if (prefix == this.config.prefix) { 
+            if (prefix == this.config.prefix) {
+                console.log(message.author.id); //DEBUG
+                Database.createUser(message);
                 UserCreation(message);
                 let paramTuple = [
                     message,
