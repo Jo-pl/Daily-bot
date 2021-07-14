@@ -32,7 +32,6 @@ class Bot {
         this.client.on('message', message => {
             let [prefix, ...command] = message.content;
             if (prefix == this.config.prefix) {
-                //CommandRequest.requestFromMessage(message);
                 new CommandListener(message);
             }
         })
