@@ -3,15 +3,15 @@
 
 ## Run the production Environement
 ```bash
-docker-compose -f docker.compose.yml 
+docker-compose -f docker-compose.yml 
 ```
 ## Run the dev Environement
 You will need [Docker](https://www.docker.com/get-started) and [docker-compose](https://docs.docker.com/compose/install/) installed on your machine. This will enable you to install the node version needed to run this project, all the dependancies and also a mongoDB database.
 
 Execute the following commands in repo root.
 ```bash
-docker-compose -f docker.compose.yml \
-			   -f docker.compose.dev.yml
+docker-compose -f docker-compose.yml \
+			   -f docker-compose.dev.yml
 
 ```
 ## Rebuild the dockerfile
