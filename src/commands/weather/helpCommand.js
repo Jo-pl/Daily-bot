@@ -1,7 +1,9 @@
+
+
 class HelpCommand {
 
-    static execute({message : message}) {
-        message.channel.send({
+    static execute(request) {
+        request.message.channel.send({
             embed: {
                 color: 'RANDOM',
                 title: 'Help Weather Command',
