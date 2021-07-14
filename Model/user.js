@@ -5,10 +5,10 @@ const UserSchema = new Schema({
     userName: String ,
     avatarURL: String,
     subreddit_ids: {type : [Number], default : []},
+    lang : {type : String , default : 'en'},
     weather : {
         unit : {type : String, default : 'default'},
-        location : {type : String , default : 'montreal'},
-        lang : {type : String , default : 'en'}
+        location : {type : String , default : 'montreal'}
     }
 });
 

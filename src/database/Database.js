@@ -10,14 +10,10 @@ class Database {
                 userName: message.author.username, 
                 avatarURL: message.author.avatarURL(),
             });
-            await newUser.save().exec();
-            return new Promise((resolve, reject) => {
-                resolve(newUser);
-            });
+            await newUser.save();
+            return newUser
         }
-        return new Promise((resolve, reject) => {
-            resolve(result);
-        });
+        return result;
     }
 
     static async findUser(discordID) {
