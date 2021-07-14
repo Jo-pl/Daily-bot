@@ -15,8 +15,9 @@ class CommandRequest{
 	static requestFromMessage(message){
 		let [_, ...command] = message.content;
 		let [head , ...rest] = command.join('').split(" ");
-		Database.createUser(message).then((user) => {
-			new CommandRequest({
+		return Database.createUser(message)
+		.then((user) => {
+			return new CommandRequest({
 					"command" : {
 							"head" : head ,
 							"rest" : rest 
@@ -24,13 +25,12 @@ class CommandRequest{
 					"message" : message,
 					"user"    : user,
 			});
-			console.log(result);
 		})
 		.catch((err) => {console.error(err) ; throw err});
 }
 
 	next(){
-		[_,head,...rest] = this.command;
+		let {rest : [head,...rest]} = this.command;
 		return new CommandRequest({
 			command : {
 				"head" : head,

@@ -39,7 +39,6 @@ class Weather {
 	 * @author SaschaAlex
 	 */
 	async fetchWeatherApi(command) {
-		let connection = new Connection();
 		const url = new URL(`https://api.openweathermap.org/data/2.5/${command}`);
 		url.searchParams.append("q", this.location);
 		url.searchParams.append("units", this.unit);

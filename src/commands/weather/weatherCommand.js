@@ -19,10 +19,6 @@ class WeatherCommand {
 		}
 	}
 
-	execute() {
-
-	}
-
 	help(request) {
 		HelpCommand.execute(request);
 	}
