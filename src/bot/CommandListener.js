@@ -1,17 +1,19 @@
-const {
-    WeatherCommand
-} = require('../commands/weather/weatherCommand')
+const {WeatherCommand} = require('../commands/weather/weatherCommand')
+const CommandRequest   = require('../commands/commandRequest');
 
 class CommandListener {
-    constructor([message, [command, ...args]]) {
-
-        switch (command) {
-            case "weather":
-                let weatherCommand = new WeatherCommand([message, args]);
-                break;
-            case "reddit":
-                break;
-        }
+    constructor(message) {
+        CommandRequest.requestFromMessage(message)
+        .then((request) => {
+            switch (request.command.head) {
+                case "weather":
+                    new WeatherCommand(request.next());
+                    break;
+                case "reddit":
+                    break;
+            }
+        })
+        .catch((err) => console.log(err));
     }
 }
 

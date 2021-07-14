@@ -1,8 +1,7 @@
-const schedule = require("node-schedule");
-const {
-    CommandListener
-} = require('./CommandListener');
-
+const {CommandListener} = require('./CommandListener');
+const Connection = require('../database/Connection');
+const Database = require('../database/Database');
+const CommandRequest = require('../commands/commandRequest');
 
 /**
  * @description This class 
@@ -17,6 +16,7 @@ class Bot {
     constructor(parameters) {
         this.client = parameters.client
         this.config = parameters.config
+        this.connection = new Connection();
         this.listenClient();
     }
     /**
@@ -24,7 +24,6 @@ class Bot {
      * @author Misterjo, SaschaAlex 
      */
     listenClient() {
-        console.log("testing");
         const channel = this.client.channels.cache.get('855918559992348723');
         this.client.once('ready', () => {
             console.log('Ready!');
@@ -33,16 +32,13 @@ class Bot {
         this.client.on('message', message => {
             let [prefix, ...command] = message.content;
             if (prefix == this.config.prefix) {
-                let paramTuple = [
-                    message,
-                    command.join('').split(" ")
-                ]
-                let commandListener = new CommandListener(paramTuple);
+                //CommandRequest.requestFromMessage(message);
+                new CommandListener(message);
             }
         })
     }
-
 }
+
 module.exports = {
     Bot: Bot
 };

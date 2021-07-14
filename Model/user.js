@@ -1,13 +1,15 @@
 const {Schema , model} = require('mongoose');
 
 const UserSchema = new Schema({
-	discordId: Number ,
+	discordId: String ,
     userName: String ,
-    avatarUrl: String,
-    subreddits:[{
-        id:Number,
-        name:String,
-    }],
+    avatarURL: String,
+    subreddit_ids: {type : [Number], default : []},
+    weather : {
+        unit : {type : String, default : 'default'},
+        location : {type : String , default : 'montreal'},
+        lang : {type : String , default : 'en'}
+    }
 });
 
 const User = model('User', UserSchema);

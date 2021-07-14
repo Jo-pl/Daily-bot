@@ -1,8 +1,9 @@
 const {Schema , model} = require('mongoose');
 
 const SubredditSchema = new Schema({
-    id: Number,
+    id: String,
     name: String,
+    link: String
 });
 
 const Subreddit = model('Subreddit', SubredditSchema);

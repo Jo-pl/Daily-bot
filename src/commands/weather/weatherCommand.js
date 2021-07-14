@@ -6,29 +6,25 @@ const {
 } = require('./currentCommand');
 
 class WeatherCommand {
-	constructor([message, [command, ...args]]) {
-		switch (command) {
+	constructor(request) {
+		switch (request.command.head) {
 			case "help":
-				this.help([message,args]);
+				this.help(request.next());
 				break;
 			case "current":
-				this.getWeather([message, args]);
+				this.getWeather(request.next());
 				break;
 			default:
 				this.invalidCommand();
 		}
 	}
 
-	execute() {
-
+	help(request) {
+		HelpCommand.execute(request);
 	}
 
-	help([message]) {
-		HelpCommand.execute(message);
-	}
-
-	getWeather([message]) {
-		Current.execute(message);
+	getWeather(request) {
+		Current.execute(request);
 	}
 	invalidCommand() {
 

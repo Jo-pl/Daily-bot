@@ -1,6 +1,6 @@
 class HelpCommand {
 
-    static execute(message) {
+    static execute({message : message}) {
         message.channel.send({
             embed: {
                 color: 'RANDOM',
