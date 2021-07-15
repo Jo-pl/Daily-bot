@@ -34,9 +34,6 @@ const config = require('../config.json');
 //Initializing bot
 const Bot = require('./bot/Bot');
 
-const test = require('./test');
-console.log(test.foo());
-
 
 const client = new Discord.Client();
 client.login(process.env.DISCORD_TOKEN);
