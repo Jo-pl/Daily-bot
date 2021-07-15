@@ -6,17 +6,6 @@ global.include = function(file) {
   return require(abs_path('/' + file));
 }
 
-function substitute(subObject){
-	let result = this;
-	for (var key in subObject) {
-		result = result.replace(new RegExp("%" + key + "%", "g"), subObject[key]);
-	}
-	return result;
-}
-
-String.prototype.substitute = substitute;
-
-
 //Discord dependancies
 const Discord = require('discord.js');
 //Basic functionnalities

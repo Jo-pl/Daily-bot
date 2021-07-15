@@ -9,7 +9,8 @@ const Connection = include('database/Connection');
 class Bot {
     /**
      * @author Misterjo, SaschaAlex
-     * @param {Object} parameters  
+     * @param {Object} parameters
+     * @param {parameters} 
      */
     constructor(parameters) {
         this.client = parameters.client
