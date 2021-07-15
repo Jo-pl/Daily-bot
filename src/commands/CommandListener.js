@@ -1,5 +1,5 @@
-const {WeatherCommand} = require('../commands/weather/weatherCommand')
-const CommandRequest   = require('../commands/commandRequest');
+const WeatherCommand = require('./weather/weatherCommand')
+const CommandRequest   = require('./commandRequest');
 
 class CommandListener {
     constructor(message) {
@@ -17,6 +17,4 @@ class CommandListener {
     }
 }
 
-module.exports = {
-    CommandListener: CommandListener
-};
+module.exports = CommandListener;

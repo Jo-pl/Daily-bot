@@ -1,7 +1,5 @@
-const {CommandListener} = require('./CommandListener');
-const Connection = require('../database/Connection');
-const Database = require('../database/Database');
-const CommandRequest = require('../commands/commandRequest');
+const CommandListener = include('commands/CommandListener');
+const Connection = include('database/Connection');
 
 /**
  * @description This class 
@@ -11,7 +9,8 @@ const CommandRequest = require('../commands/commandRequest');
 class Bot {
     /**
      * @author Misterjo, SaschaAlex
-     * @param {Object} parameters  
+     * @param {Object} parameters
+     * @param {parameters} 
      */
     constructor(parameters) {
         this.client = parameters.client
@@ -38,6 +37,4 @@ class Bot {
     }
 }
 
-module.exports = {
-    Bot: Bot
-};
+module.exports = Bot;

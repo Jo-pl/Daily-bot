@@ -1,19 +1,17 @@
-const EmbedBuilder = require('../../embed/embedBuilder');
-const EmbedType = require('../../embed/embedType');
-const WeatherEmbedType = require('../../embed/weather/weatherEmbedType');
+const Embed = include('embed/index');
 
 class HelpCommand {
 
     static execute(request) {
         request.embedParams = {
-            type : EmbedType.Weather, 
-            embedType : WeatherEmbedType.Help
+            type : Embed.EmbedType.Weather, 
+            embedType : Embed.WeatherEmbedType.Help
         };
-        new EmbedBuilder(request);
+        Embed.EmbedBuilder.build(request).then((embed) => {
+            request.message.channel.send(embed);
+        });
 
     }
 }
 
-module.exports = {
-    HelpCommand: HelpCommand
-};
+module.exports = HelpCommand;

@@ -1,18 +1,16 @@
-const {Weather} = require("../../weather/weather");
-const EmbedBuilder = require("../../embed/embedBuilder");
-const EmbedType = require("../../embed/embedType");
-const WeatherEmbedType = require("../../embed/weather/weatherEmbedType");
+const Embed = include('embed/index');
 
 class Current {
     static execute(request) {
         request.embedParams = {
-            type : EmbedType.Weather, 
-            embedType : WeatherEmbedType.Current
+            type : Embed.EmbedType.Weather, 
+            embedType : Embed.WeatherEmbedType.Current
         };
-        new EmbedBuilder(request);
+        Embed.EmbedBuilder.build(request).then((embed) =>{
+            request.message.channel.send(embed);
+        });
+    
     }
     
 }
-module.exports = {
-    Current: Current
-};
+module.exports = Current;

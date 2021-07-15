@@ -1,4 +1,6 @@
 {
+	"HelpCommand" : 
+	{
 	"Title": "Aide pour la météo",
 	"Description": "Ceci est une commande d'aide pour la météo",
 	"Help": "`$weather help` Ceci est une commande d'aide pour la météo.",
@@ -8,4 +10,17 @@
 	"Unit": "`$weather unit {unit}` Commande pour changer les unités.",
 	"Lang": "`$weather unit {lang}` Commande pour changer la langue.",
 	"Loc": "`$weather loc {loc}` Commande pour changer la localisation."
+	},
+	"CurrentWeatherCommand" :
+	{
+	  "Title": "Météo actuelle",
+	  "Description": "La température pour %city% est %description% et la température ressentie est %feels_like% %unit%.",
+	  "Temperature_today": "Température aujourd'hui",
+	  "Min": "Min",
+	  "Current": "Présentement",
+	  "Max": "Max",
+	  "Wind_speed": "Vents",
+	  "Humidity": "Humidité",
+	  "Pressure": "Pression"
+	}
 }

@@ -1,0 +1,28 @@
+{
+	"HelpCommand" : 
+  {    
+    "Title": "Help Weather",
+    "Description": "This is a help command for weather",
+    "Help": "`$weather help` This is a help command for the weather command.",
+    "Current": "`$weather current` This command will get the current weather.",
+    "Day": "`$weather day` The forecast for today hourly",
+    "Week": "`$weather week` The forecast for the next 7 days.",
+    "Unit": "`$weather unit {unit}` Command to change unit.",
+    "Lang": "`$weather unit {lang}` Command to change language.",
+    "Loc": "`$weather loc {loc}` Command to change location."
+  },
+
+  "CurrentWeatherCommand" :
+  {
+    "Title": "Curent weather",
+    "Description": "The current weather for %city% is %description% and it feels like %feels_like% %unit%.",
+    "Temperature_today": "Temperature for today",
+    "Min": "Min",
+    "Current": "Current",
+    "Max": "Max",
+    "Wind_speed": "Wind speed",
+    "Humidity": "Humidity",
+    "Pressure": "Pressure"
+  }
+
+}

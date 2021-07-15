@@ -1,17 +1,18 @@
 const WeatherEmbedType = require('./weatherEmbedType');
-const HelpEmbed = require('./helpEmbed/helpembed');
+const HelpEmbed = require('./helpembed');
+const CurrentWeatherEmbed = require('./currentWeatherEmbed');
 
 class EmbedWeather {
-	static execute(request,embed){
+	static async execute(request,embed){
 		switch(request.embedParams.embedType){
 			case WeatherEmbedType.Current:
-				// TODO
+				await CurrentWeatherEmbed.execute(request,embed);
 				break;
 			case WeatherEmbedType.Help:
-				HelpEmbed.execute(request,embed);
+				await HelpEmbed.execute(request,embed);
 				break;
 			default:
-				// TODO
+				HelpEmbed.execute(request,embed);
 		}
 
 	}
