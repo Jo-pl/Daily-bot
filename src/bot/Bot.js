@@ -1,7 +1,5 @@
-const {CommandListener} = require('./CommandListener');
-const Connection = require('../database/Connection');
-const Database = require('../database/Database');
-const CommandRequest = require('../commands/commandRequest');
+const CommandListener = include('commands/CommandListener');
+const Connection = include('database/Connection');
 
 /**
  * @description This class 
@@ -38,6 +36,4 @@ class Bot {
     }
 }
 
-module.exports = {
-    Bot: Bot
-};
+module.exports = Bot;

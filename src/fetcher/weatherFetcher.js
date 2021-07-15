@@ -17,3 +17,5 @@ class WeatherFetcher{
 			return json;
 	}
 }
+
+module.exports = WeatherFetcher;

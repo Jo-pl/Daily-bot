@@ -1,9 +1,5 @@
-const {
-	HelpCommand
-} = require('./helpCommand');
-const {
-	Current
-} = require('./currentCommand');
+const HelpCommand = require('./helpCommand');
+const Current = require('./currentCommand');
 
 class WeatherCommand {
 	constructor(request) {
@@ -32,6 +28,4 @@ class WeatherCommand {
 
 }
 
-module.exports = {
-	WeatherCommand: WeatherCommand
-};
+module.exports = WeatherCommand;

@@ -1,3 +1,11 @@
+global.base_dir = __dirname;
+global.abs_path = function(path) {
+  return base_dir + path;
+}
+global.include = function(file) {
+  return require(abs_path('/' + file));
+}
+
 //Discord dependancies
 const Discord = require('discord.js');
 //Basic functionnalities
@@ -13,9 +21,8 @@ dotenv.config();
 const config = require('../config.json');
 
 //Initializing bot
-const {
-    Bot
-} = require('./bot/Bot');
+const Bot = require('./bot/Bot');
+
 const client = new Discord.Client();
 client.login(process.env.DISCORD_TOKEN);
 let discordBot = new Bot({

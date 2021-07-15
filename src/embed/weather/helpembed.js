@@ -1,22 +1,23 @@
-const fr = require('../../../localization/local_weather/french.json');
-const en = require('../../../localization/local_weather/english.json');
-const createField = require('../../createField');
+
+const {weather} = include('localization/index');
+const createField = require('../createField');
 
 class HelpEmbed{
 
 	static execute (request,embed){
-		console.log("Me at HelpEmbed");
 		switch(request.user.lang){
 			case "en":
-        this.trad_file = en.HelpEmbed;
+        this.trad_file = weather.en.HelpCommand;
 				break;
 			case "fr":
-        this.trad_file = fr.HelpEmbed;
+        this.trad_file = weather.fr.HelpCommand;
 				break;
 			default:
-				this.trad_file = en.HelpEmbed;
+				this.trad_file = weather.en.HelpCommand;
 		}
-		request.message.channel.send(embed.setColor('RANDOM')
+		
+		embed
+		  .setColor('RANDOM')
 			.setTitle(this.trad_file.Title)
 			.setDescription(this.trad_file.Description)
 			.addFields(
@@ -27,7 +28,7 @@ class HelpEmbed{
         createField('Unit',`${this.trad_file.Unit}`),
         createField('Lang',`${this.trad_file.Lang}`),
         createField('Loc',`${this.trad_file.Loc}`)
-      ));
+      );
 	}
 
 }

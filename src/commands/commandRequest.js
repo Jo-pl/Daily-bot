@@ -1,4 +1,4 @@
-const Database = require('../database/Database');
+const Database = include('database/Database');
 
 class CommandRequest{
 	

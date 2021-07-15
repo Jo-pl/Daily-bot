@@ -1,5 +1,5 @@
 const WeatherEmbedType = require('./weatherEmbedType');
-const HelpEmbed = require('./helpEmbed/helpembed');
+const HelpEmbed = require('./helpembed');
 
 class EmbedWeather {
 	static execute(request,embed){
