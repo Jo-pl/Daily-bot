@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     lang : {type : String , default : 'en'},
     weather : {
         unit : {type : String, default : 'default'},
-        location : {type : String , default : 'montreal'}
+        loc : {type : String , default : 'montreal'}
     }
 });
 

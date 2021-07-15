@@ -1,4 +1,6 @@
 {
+	"HelpCommand" : 
+	{
 	"Title": "Aide pour la météo",
 	"Description": "Ceci est une commande d'aide pour la météo",
 	"Help": "`$weather help` Ceci est une commande d'aide pour la météo.",
@@ -8,4 +10,10 @@
 	"Unit": "`$weather unit {unit}` Commande pour changer les unités.",
 	"Lang": "`$weather unit {lang}` Commande pour changer la langue.",
 	"Loc": "`$weather loc {loc}` Commande pour changer la localisation."
+	},
+	"CurrentWeatherCommand" :
+	{
+	  "Title": "Help Weather",
+	  "Description": "This is a help command for weather"
+	}
 }
