@@ -6,8 +6,10 @@ class Current {
             type : Embed.EmbedType.Weather, 
             embedType : Embed.WeatherEmbedType.Current
         };
-        let embed = Embed.EmbedBuilder.build(request);
-        request.message.channel.send(embed);
+        Embed.EmbedBuilder.build(request).then((embed) =>{
+            request.message.channel.send(embed);
+        });
+    
     }
     
 }

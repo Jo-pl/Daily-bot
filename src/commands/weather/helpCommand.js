@@ -7,8 +7,9 @@ class HelpCommand {
             type : Embed.EmbedType.Weather, 
             embedType : Embed.WeatherEmbedType.Help
         };
-        let embed = Embed.EmbedBuilder.build(request);
-        request.message.channel.send(embed);
+        Embed.EmbedBuilder.build(request).then((embed) => {
+            request.message.channel.send(embed);
+        });
 
     }
 }

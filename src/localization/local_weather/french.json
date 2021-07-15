@@ -13,7 +13,14 @@
 	},
 	"CurrentWeatherCommand" :
 	{
-	  "Title": "Help Weather",
-	  "Description": "This is a help command for weather"
+	  "Title": "Météo actuelle",
+	  "Description": "La température pour %city% est %description% et la température ressentie est %feels_like% %unit%.",
+	  "Temperature_today": "Température aujourd'hui",
+	  "Min": "Min",
+	  "Current": "Présentement",
+	  "Max": "Max",
+	  "Wind_speed": "Vents",
+	  "Humidity": "Humidité",
+	  "Pressure": "Pression"
 	}
 }

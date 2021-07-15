@@ -21,6 +21,16 @@ class Database {
             discordId: discordID
         }).exec();
     }
+
+    static async changeUserWeatherSettings(discordID,weatherObject){
+       /* const filter = { discordId: discordID };
+        const update = { weather: weatherObject };
+        let user = await model.User.findOneAndUpdate(filter, update, {
+            new: true
+        }).exec();
+        */
+    }
+
 }
 
 module.exports = Database;

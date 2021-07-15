@@ -7,7 +7,7 @@ const UserSchema = new Schema({
     subreddit_ids: {type : [Number], default : []},
     lang : {type : String , default : 'en'},
     weather : {
-        unit : {type : String, default : 'default'},
+        unit : {type : String, default : 'metric'},
         loc : {type : String , default : 'montreal'}
     }
 });

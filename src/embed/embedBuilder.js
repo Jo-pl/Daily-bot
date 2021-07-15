@@ -6,13 +6,13 @@ const EmbedWeather = require('./weather/embedWeather');
 
 class EmbedBuilder {
 
-  static build(request){
+  static async build(request){
     
     this.embed = new MessageEmbed();
     this.embed.setTimestamp();
     switch(request.embedParams.type){
         case EmbedType.Weather:
-            EmbedWeather.execute(request,this.embed);
+            await EmbedWeather.execute(request,this.embed);
             break;
         case EmbedType.Reddit:
             // TODO

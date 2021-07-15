@@ -4,7 +4,7 @@ const createField = require('../createField');
 
 class HelpEmbed{
 
-	static execute (request,embed){
+	static async execute (request,embed){
 		switch(request.user.lang){
 			case "en":
         this.trad_file = weather.en.HelpCommand;

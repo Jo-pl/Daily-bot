@@ -15,7 +15,14 @@
   "CurrentWeatherCommand" :
   {
     "Title": "Curent weather",
-    "Description": "This is a help command for weather"
+    "Description": "The current weather for %city% is %description% and it feels like %feels_like% %unit%.",
+    "Temperature_today": "Temperature for today",
+    "Min": "Min",
+    "Current": "Current",
+    "Max": "Max",
+    "Wind_speed": "Wind speed",
+    "Humidity": "Humidity",
+    "Pressure": "Pressure"
   }
 
 }
