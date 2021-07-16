@@ -1,29 +1,23 @@
 const HelpCommand = require('./helpCommand');
-const Current = require('./currentCommand');
+const Current 		= require('./currentCommand');
+const Weekly  		= require('./weeklyCommand');
+const Invalid     = require('./invalidCommand');
 
 class WeatherCommand {
 	constructor(request) {
 		switch (request.command.head) {
 			case "help":
-				this.help(request.next());
+				HelpCommand.execute(request.next());
 				break;
 			case "current":
-				this.getWeather(request.next());
+				Current.execute(request.next());
+				break;
+			case "weekly":
+				Weekly.execute(request.next());
 				break;
 			default:
-				this.invalidCommand();
+				Invalid.execute(request.next());
 		}
-	}
-
-	help(request) {
-		HelpCommand.execute(request);
-	}
-
-	getWeather(request) {
-		Current.execute(request);
-	}
-	invalidCommand() {
-
 	}
 
 }

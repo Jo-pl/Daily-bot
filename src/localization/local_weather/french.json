@@ -8,7 +8,7 @@
 	"Day": "`$weather day` Les prévisions météorologiques pour la journée.",
 	"Week": "`$weather week` Les prévisions météorologiques pour la semaine.",
 	"Unit": "`$weather unit {unit}` Commande pour changer les unités.",
-	"Lang": "`$weather unit {lang}` Commande pour changer la langue.",
+	"Lang": "`$weather lang {lang}` Commande pour changer la langue.",
 	"Loc": "`$weather loc {loc}` Commande pour changer la localisation."
 	},
 	"CurrentWeatherCommand" :
@@ -22,5 +22,11 @@
 	  "Wind_speed": "Vents",
 	  "Humidity": "Humidité",
 	  "Pressure": "Pression"
-	}
+	},
+	"Invalid" : 
+	{
+		"Title" : "Commande invalide",
+		"Description" : "Cette commande est invalide vous pouvez taper `%symbol%weather help` pour \n plus d'information ou cliquer sur ❔ en réaction.",
+		"Error" : "Erreur"
+	} 
 }
