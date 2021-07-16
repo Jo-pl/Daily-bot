@@ -1,5 +1,4 @@
 const {MessageEmbed} = require('discord.js');
-
 const EmbedType = require('./embedType');
 const EmbedWeather = require('./weather/embedWeather');
 

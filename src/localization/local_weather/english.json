@@ -23,6 +23,14 @@
     "Wind_speed": "Wind speed",
     "Humidity": "Humidity",
     "Pressure": "Pressure"
+  },
+  
+  "SettingsWeatherCommand":
+  {
+    "Title": "Setting update",
+    "Description": "Please react with :white_check_mark: to confirm the following changes",
+    "Saved": "Your changes have been saved",
+	  "Canceled": "Operation cancelled"
   }
 
 }
