@@ -10,7 +10,7 @@ class Bot {
     /**
      * @author Misterjo, SaschaAlex
      * @param {Object} parameters
-     * @param {parameters} 
+     * @return {Bot} 
      */
     constructor(parameters) {
         this.client = parameters.client
@@ -23,7 +23,6 @@ class Bot {
      * @author Misterjo, SaschaAlex 
      */
     listenClient() {
-        const channel = this.client.channels.cache.get('855918559992348723');
         this.client.once('ready', () => {
             console.log('Ready!');
         });

@@ -1,6 +1,7 @@
 const WeatherEmbedType = require('./weatherEmbedType');
 const HelpEmbed = require('./helpembed');
 const CurrentWeatherEmbed = require('./currentWeatherEmbed');
+const InvalidEmbed = require('./InvalidEmbed');
 
 class EmbedWeather {
 	static async execute(request,embed){
@@ -11,8 +12,11 @@ class EmbedWeather {
 			case WeatherEmbedType.Help:
 				await HelpEmbed.execute(request,embed);
 				break;
+			case WeatherEmbedType.Invalid:
+				await InvalidEmbed.execute(request,embed);
+				break;
 			default:
-				HelpEmbed.execute(request,embed);
+				await InvalidEmbed.execute(request,embed);
 		}
 
 	}
