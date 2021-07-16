@@ -10,7 +10,7 @@ class Bot {
     /**
      * @author Misterjo, SaschaAlex
      * @param {Object} parameters
-     * @param {parameters} 
+     * @return {Bot} 
      */
     constructor(parameters) {
         this.client = parameters.client

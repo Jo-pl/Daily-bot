@@ -1,15 +1,26 @@
 const Embed = include('embed/index');
 
-class HelpCommand {
+/**
+ * @typedef {object} Request
+ */
 
+
+class HelpCommand {
+    /**
+     * @author SaschaAlex,MisterJo
+     * @param {Request} request
+     * @static 
+     */
     static execute(request) {
         request.embedParams = {
             type : Embed.EmbedType.Weather, 
             embedType : Embed.WeatherEmbedType.Help
         };
-        Embed.EmbedBuilder.build(request).then((embed) => {
-            request.message.channel.send(embed);
-        });
+        async function run(){
+            let embed = await Embed.EmbedBuilder.build(request);
+            let message = await request.message.channel.send(embed);  
+        }
+        run();
 
     }
 }

@@ -1,7 +1,16 @@
 const Embed = include('embed/index');
 const HelpCommand = require('./helpCommand');
 
+/**
+ * @typedef {object} Request
+ */
+
 class InvalidCommand {
+  /**
+   * @author SaschaAlex
+   * @param {Request} request
+   * @static 
+   */
   static execute(request) {
     request.embedParams = {
         type : Embed.EmbedType.Weather, 
@@ -13,10 +22,11 @@ class InvalidCommand {
       await message.react('❔');
       message.awaitReactions((reaction, user) => {
         return (user.id == request.message.author.id) && (reaction.emoji.name == '❔')},
-        {max : 1 ,time :30000}
+        {max : 1 ,time :20000}
       )
       .then((collection) => {
         if(collection.size != 0){
+          message.delete();
           HelpCommand.execute(request);
         }else{
           throw "Out of time"
