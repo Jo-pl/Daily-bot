@@ -1,5 +1,5 @@
 const Embed = include('embed/index');
-const Database = include('database/database');
+const Database = include('database/Database');
 const Discord = require('discord.js');
 
 class SettingsUpdateComand {
