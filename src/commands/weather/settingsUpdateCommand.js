@@ -1,4 +1,5 @@
 const Embed = include('embed/index');
+const Database = include('database/database.js');
 const Discord = require('discord.js');
 
 class SettingsUpdateComand {
@@ -17,16 +18,16 @@ class SettingsUpdateComand {
             .then(collected => {
                 const reaction = collected.first();
                 if (reaction.emoji.name === '✅') {
-                    let embed = new Discord.MessageEmbed()
-                    .setTitle('Setting update')
-                    .setDescription('`Your settings have been saved`')
-                    .setTimestamp();
-                    message.edit(embed);
-                    this.deleteMessage(message,request.message);
+                    let weatherObject = request.user.weather;
+                    let testing = request.command.rest.join(' ');
+                    console.log(testing);
+                    request.settingType=='unit'?weatherObject.unit = request.command.head+' '+request.command.rest.join(' '):weatherObject.loc = request.command.head+' '+request.command.rest.join(' ');
+                    Database.changeUserWeatherSettings(request.message.author.id,weatherObject)
+                    .then(this.sendSettingsSaved(message,request));
                 } else {
                     let embed = new Discord.MessageEmbed()
                     .setTitle('Setting update')
-                    .setDescription('`Changes canceled...`')
+                    .setDescription('Changes canceled...')
                     .setTimestamp();
                     message.edit(embed);
                     this.deleteMessage(message,request.message);
@@ -41,6 +42,15 @@ class SettingsUpdateComand {
             });
         });
 
+    }
+
+    static async sendSettingsSaved(message,request){
+        let embed = new Discord.MessageEmbed()
+        .setTitle('Setting update')
+        .setDescription('`Your settings have been saved`')
+        .setTimestamp();
+        message.edit(embed);
+        this.deleteMessage(message,request.message);
     }
 
     static deleteMessage(message,originalMessage){

@@ -19,7 +19,7 @@ class SettingsWeatherEmbed {
         .setTitle(this.trad_file.Title)
         .setDescription(this.trad_file.Description)
         .addFields(createField(request.settingType.toUpperCase() , (request.settingType == 'unit'?
-        request.user.weather.unit:request.user.weather.loc) + ' => '+request.command.head)
+        request.user.weather.unit:request.user.weather.loc) + ' => '+request.command.head+' '+request.command.rest.join(' '))
         );
     }
 }

@@ -28,7 +28,6 @@ class Database {
         let user = await model.User.findOneAndUpdate(filter, update, {
             new: true
         }).exec();
-        
     }
 
 }
