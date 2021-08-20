@@ -27,9 +27,10 @@
 	"SettingsWeatherCommand":
 	{
 	  "Title": "Changements d'options",
-	  "Description": "Donner une réaction :white_check_mark:865361390797324299 pour confirmer les changements suivants",
+	  "Description": "Donner une réaction :white_check_mark: pour confirmer les changements suivants",
 	  "Saved": "Vos changements ont bien été enregistrés",
-	  "Canceled": "L'opération à été annulée"
+	  "Canceled": "L'opération à été annulée",
+	  "Expired": "Cette requête est expirée"
 	},
 	"Invalid" : 
 	{

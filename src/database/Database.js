@@ -30,6 +30,15 @@ class Database {
         }).exec();
     }
 
+    static async changeUserLocalizationSettings(discordID,lang){
+        const filter = { discordId: discordID };
+        const update = { lang: lang };
+        let user = await model.User.findOneAndUpdate(filter, update, {
+            new: true
+        }).exec();
+    }
+
+
 }
 
 module.exports = Database;

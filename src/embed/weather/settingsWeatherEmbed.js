@@ -15,11 +15,27 @@ class SettingsWeatherEmbed {
 			default:
 				this.trad_file = weather.en.SettingsWeatherCommand;
 		}
+
+        let textToAdd;
+
+        switch (request.settingType){
+          case "unit":
+            textToAdd = request.user.weather.unit;
+            break;
+          case "loc":
+            textToAdd = request.user.weather.loc;
+            break;
+          case "lang":
+            textToAdd = request.user.lang;
+            break;
+        }
+        textToAdd+=' => '+request.command.head+' '+request.command.rest.join(' ');
+
         embed.setColor('#0099ff')
         .setTitle(this.trad_file.Title)
         .setDescription(this.trad_file.Description)
-        .addFields(createField(request.settingType.toUpperCase() , (request.settingType == 'unit'?
-        request.user.weather.unit:request.user.weather.loc) + ' => '+request.command.head+' '+request.command.rest.join(' '))
+        .addFields(createField(request.settingType.toUpperCase() , (
+          textToAdd))
         );
     }
 }

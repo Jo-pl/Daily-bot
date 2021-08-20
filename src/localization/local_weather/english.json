@@ -26,10 +26,11 @@
   },
   "SettingsWeatherCommand":
   {
-    "Title": "Setting update",
+    "Title": "Settings update",
     "Description": "Please react with :white_check_mark: to confirm the following changes",
     "Saved": "Your changes have been saved",
-	  "Canceled": "Operation cancelled"
+	  "Canceled": "Operation cancelled",
+    "Expired": "This request has expired"
   },
   "Invalid" :
   {
