@@ -31,6 +31,7 @@ class WeatherCommand {
 				break;
 			case "unit":
 			case "loc":
+			case "lang":
 				this.settingType = request.command.head.toString();
 				this.updateSettings(request.next());
 				break;
