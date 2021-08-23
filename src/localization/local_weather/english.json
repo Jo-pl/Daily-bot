@@ -24,11 +24,18 @@
     "Humidity": "Humidity",
     "Pressure": "Pressure"
   },
+  "SettingsWeatherCommand":
+  {
+    "Title": "Settings update",
+    "Description": "Please react with :white_check_mark: to confirm the following changes",
+    "Saved": "Your changes have been saved",
+	  "Canceled": "Operation cancelled",
+    "Expired": "This request has expired"
+  },
   "Invalid" :
   {
 		"Title" : "Invalid comand",
 		"Description" : "This command is invalid type `%symbol%weather help` for \n more  information or click on ❔ in reaction.",
     "Error" : "Error"
 	} 
-
 }

@@ -23,13 +23,21 @@ class Database {
     }
 
     static async changeUserWeatherSettings(discordID,weatherObject){
-       /* const filter = { discordId: discordID };
+        const filter = { discordId: discordID };
         const update = { weather: weatherObject };
         let user = await model.User.findOneAndUpdate(filter, update, {
             new: true
         }).exec();
-        */
     }
+
+    static async changeUserLocalizationSettings(discordID,lang){
+        const filter = { discordId: discordID };
+        const update = { lang: lang };
+        let user = await model.User.findOneAndUpdate(filter, update, {
+            new: true
+        }).exec();
+    }
+
 
 }
 

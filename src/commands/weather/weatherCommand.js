@@ -1,4 +1,5 @@
 const HelpCommand = require('./helpCommand');
+const SettingsUpdateCommand = include('./commands/weather/settingsUpdateCommand');
 const Current 		= require('./currentCommand');
 const Weekly  		= require('./weeklyCommand');
 const Invalid     = require('./invalidCommand');
@@ -28,11 +29,33 @@ class WeatherCommand {
 			case "weekly":
 				Weekly.execute(request.next());
 				break;
+			case "unit":
+			case "loc":
+			case "lang":
+				this.settingType = request.command.head.toString();
+				this.updateSettings(request.next());
+				break;
 			default:
 				Invalid.execute(request.next());
 		}
 	}
+  
+	help(request) {
+		HelpCommand.execute(request);
+	}
 
+	getWeather(request) {
+		Current.execute(request);
+	}
+
+	updateSettings(request){
+		request.settingType = this.settingType;
+		SettingsUpdateCommand.execute(request);
+	}
+
+	invalidCommand() {
+
+	}
 }
 
 module.exports = WeatherCommand;

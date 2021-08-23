@@ -11,6 +11,7 @@
 	"Lang": "`$weather lang {lang}` Commande pour changer la langue.",
 	"Loc": "`$weather loc {loc}` Commande pour changer la localisation."
 	},
+
 	"CurrentWeatherCommand" :
 	{
 	  "Title": "Météo actuelle",
@@ -22,6 +23,14 @@
 	  "Wind_speed": "Vents",
 	  "Humidity": "Humidité",
 	  "Pressure": "Pression"
+	},
+	"SettingsWeatherCommand":
+	{
+	  "Title": "Changements d'options",
+	  "Description": "Donner une réaction :white_check_mark: pour confirmer les changements suivants",
+	  "Saved": "Vos changements ont bien été enregistrés",
+	  "Canceled": "L'opération à été annulée",
+	  "Expired": "Cette requête est expirée"
 	},
 	"Invalid" : 
 	{
